@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "842bccda-44ea-4963-941a-33a9f340add4",
+		"name": "MLM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26032023"
+	},
+	"item": [
+		{
+			"name": "RegisterAPi",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQ2MzA1Y2ZhNmJjYzljYzA2OTQ2MjkiLCJpYXQiOjE3MTU4NzYwMjYsImV4cCI6MTcxNTg3OTYyNn0.YA61xX8PyCRxCLiUHAi-LzD6le9AjCyL4h2cZej9WYs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"suraj@example.com\",\r\n  \"password\": \"password123\",\r\n  \"amount\": 1000,\r\n  \"referredBy\":\"ugxqya\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginAPI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rahul@example.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReferredTree",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"66462db58bd495e76b60240c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/referral-tree?referralCode=vkm0fp",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"referral-tree"
+					],
+					"query": [
+						{
+							"key": "referralCode",
+							"value": "vkm0fp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Commissions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/commissions?userId=664644822f5757d92177e9e9",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"commissions"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "664644822f5757d92177e9e9"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQ2NDQ1YjJmNTc1N2Q5MjE3N2U5ZTQiLCJpYXQiOjE3MTU4ODExNjksImV4cCI6MTcxNTg4NDc2OX0.toY-x2dNht8K1Q0ArGSEc4v5TcYB7vFKSvhiom7o3WM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
